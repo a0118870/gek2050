@@ -1,0 +1,323 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- <script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript" src="js/jcanvas.min.js"></script> -->
+	<script type="text/javascript" src="js/raphael.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<title>Women in Popular Music Lyrics</title>
+</head>
+
+<body>
+
+	<header id="header">
+		<div id="pad"></div>
+		<div class="center" id="title">POPMUSIC & WOMEN</div>
+		<div id="intro">Do women in popular music lyrics tend to be presented in a stereotyped way? This digital project aims to address that question by coding the lyrics of the top 30 songs of 2015 as listed in the Billboard Hot 100 within the paradigm of objectification versus empowerment.</div>
+		<div class="next">
+			<div class="continue center">Visualisation</div>
+			<button class="button center" id="next" onclick="window.location.href='#vis'">V</button>
+		</div>
+	</header>
+
+	<div id="data">
+	<a name="vis"></a>
+		<div id="container">
+			<div id="filterbar">
+				<div class="floatleft" id="filter">FILTERS</div>
+				<div class="floatleft btn" id="btnAll">ALL</div>
+				<div class="floatleft btn" id="btnMale">MALE</div>
+				<div class="floatleft btn" id="btnFemale">FEMALE</div>
+				<div class="floatleft btn" id="btnMixed">MIXED</div>
+			</div>
+			<!--<canvas id="full" width="1200" height="700"></canvas>
+			<canvas id="m"></canvas>
+			<canvas id="f"></canvas>
+			<canvas id="mf"></canvas>-->
+			<div id="canvas"></div>
+
+			<div class="desc male" id="r1">
+				<h2>#1 <br>Uptown Funk</h2>
+				<font size=2>Mark Ronson ft. Bruno Mars</font>
+				<p><img src="resources/r1.png"></p>
+				<p class="tag">(+0) Lyrically Neutral</p>
+			</div>
+
+			<div class="desc male" id="r2">
+				<h2>#2 <br>Thinking Out Loud</h2>
+				<font size=2>Ed Sheeran</font>
+				<p><img src="resources/r2.png"></p>
+				<p class="tag">(+3) Seen as Equals</p>
+			</div>
+			
+			<div class="desc male" id="r3">
+				<h2>#3 <br>See You Again</h2>
+				<font size=2>Wiz Khalifa ft. Charlie Puth</font>
+				<p><img src="resources/r3.png"></p>
+				<p class="tag">(+0) Lyrically Neutral</p>
+				<p class="tag">(+0) Not Gender Specific</p>
+			</div>
+
+			<div class="desc male" id="r4">
+				<h2>#4 <br>Trap Queen</h2>
+				<font size=2>Fetty Wap</font>
+				<p><img src="resources/r4.png"></p>
+				<p class="tag">(+3) Seen as Equals</p>
+			</div>
+
+			<div class="desc male" id="r5">
+				<h2>#5 <br>Sugar</h2>
+				<font size=2>Maroon 5</font>
+				<p><img src="resources/r5.png"></p>
+				<p class="tag">(+1) Important Person</p>
+			</div>
+
+			<div class="desc male" id="r6">
+				<h2>#6 <br>Shut Up and Dance</h2>
+				<font size=2>Walk The Moon</font>
+				<p><img src="resources/r6.png"></p>
+				<p class="tag">(+1) Important Person</p>
+				<p class="tag">(+1) True Love</p>
+			</div>
+
+			<div class="desc female" id="r7">
+				<h2>#7 <br>Blank Space</h2>
+				<font size=2>Taylor Swift</font>
+				<p><img src="resources/r7.png"></p>
+				<p class="tag">(+2) Female Dominance</p>
+			</div>
+
+			<div class="desc male" id="r8">
+				<h2>#8 <br>Watch Me</h2>
+				<font size=2>Silento</font>
+				<p><img src="resources/r8.png"></p>
+				<p class="tag">(+0) Lyrically Neutral</p>
+			</div>
+
+			<div class="desc male" id="r9">
+				<h2>#9 <br>Earned It</h2>
+				<font size=2>The Weeknd</font>
+				<p><img src="resources/r9.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+				<p class="tag">(+1) Mutual Love</p>
+			</div>
+
+			<div class="desc male" id="r10">
+				<h2>#10 <br>The Hills</h2>
+				<font size=2>The Weeknd</font>
+				<p><img src="resources/r10.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+			</div>
+
+			<div class="desc male" id="r11">
+				<h2>#11 <br>Cheerleader</h2>
+				<font size=2>OMI</font>
+				<p><img src="resources/r11.png"></p>
+				<p class="tag">(+1) Important Person</p>
+			</div>
+
+			<div class="desc male" id="r12">
+				<h2>#12 <br>Can't Feel My Face</h2>
+				<font size=2>The Weeknd</font>
+				<p><img src="resources/r12.png"></p>
+				<p class="tag">(+0) Lyrically Neutral</p>
+			</div>
+
+			<div class="desc female" id="r13">
+				<h2>#13 <br>Love Me Like You Do</h2>
+				<font size=2>Ellie Goulding</font>
+				<p><img src="resources/r13.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+				<p class="tag">(+1) Mutual Love</p>
+				<p class="tag">(+2) Independence</p>
+			</div>
+
+			<div class="desc male" id="r14">
+				<h2>#14 <br>Take Me to Church</h2>
+				<font size=2>Hozier</font>
+				<p><img src="resources/r14.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+				<p class="tag">(+1) In Control</p>
+			</div>
+
+			<div class="desc mix" id="r15">
+				<h2>#15 <br>Bad Blood</h2>
+				<font size=2>Taylor Swift ft. Kendrick Lamar</font>
+				<p><img src="resources/r15.png"></p>
+				<p class="tag">(+0) Lyrically Neutral</p>
+			</div>
+
+			<div class="desc male" id="r16">
+				<h2>#16 <br>Lean On</h2>
+				<font size=2>Major Lazer and DJ Snake ft. MØ</font>
+				<p><img src="resources/r16.png"></p>
+				<p class="tag">(+0) Lyrically Neutral</p>
+			</div>
+
+			<div class="desc male" id="r17">
+				<h2>#17 <br>Want to Want Me</h2>
+				<font size=2>Jason Derulo</font>
+				<p><img src="resources/r17.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+				<p class="tag">(+1) Mutual Love</p>
+			</div>
+
+			<div class="desc female" id="r18">
+				<h2>#18 <br>Shake it Off</h2>
+				<font size=2>Taylor Swift</font>
+				<p><img src="resources/r18.png"></p>
+				<p class="tag">(+2) Independence</p>
+			</div>
+
+			<div class="desc male" id="r19">
+				<h2>#19 <br>Where Are U Now</h2>
+				<font size=2>Skrillex and Diplo ft. Justin Bieber</font>
+				<p><img src="resources/r19.png"></p>
+				<p class="tag">(+0) Lyrically Ambiguous</p>
+			</div>
+
+			<div class="desc female" id="r20">
+				<h2>#20 <br>Fight Song</h2>
+				<font size=2>Rachel Platten</font>
+				<p><img src="resources/r20.png"></p>
+				<p class="tag">(+1) In Control</p>
+				<p class="tag">(+2) Independence</p>
+			</div>
+
+			<div class="desc male" id="r21">
+				<h2>#21 <br>679</h2>
+				<font size=2>Fetty Wap ft. Remy Boyz</font>
+				<p><img src="resources/r21.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+			</div>
+
+			<div class="desc female" id="r22">
+				<h2>#22 <br>Lips are Movin</h2>
+				<font size=2>Meghan Trainor</font>
+				<p><img src="resources/r22.png"></p>
+				<p class="tag">(+2) Independence</p>
+			</div>
+
+			<div class="desc mix" id="r23">
+				<h2>#23 <br>Worth It</h2>
+				<font size=2>Fifth Harmony ft. Kid Ink</font>
+				<p><img src="resources/r23.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+				<p class="tag">(+1) In Control</p>
+			</div>
+
+			<div class="desc mix" id="r24">
+				<h2>#24 <br>Post to Be</h2>
+				<font size=2>Omarion ft. Chris Brown and Jhené Aiko</font>
+				<p><img src="resources/r24.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+			</div>
+
+			<div class="desc male" id="r25">
+				<h2>#25 <br>Honey, I'm Good</h2>
+				<font size=2>Andy Grammer</font>
+				<p><img src="resources/r25.png"></p>
+				<p class="tag">(+1) Important Person</p>
+			</div>
+
+			<div class="desc male" id="r26">
+				<h2>#26 <br>I'm Not the Only One</h2>
+				<font size=2>Sam Smith</font>
+				<p><img src="resources/r26.png"></p>
+				<p class="tag">(+0) Lyrically Neutral</p>
+			</div>
+
+			<div class="desc mix" id="r27">
+				<h2>#27 <br>Good for You</h2>
+				<font size=2>Selena Gomez ft. A$AP Rocky</font>
+				<p><img src="resources/r27.png"></p>
+				<p class="tag">(-2) Sex Object</p>
+				<p class="tag">(+1) In Control</p>
+			</div>
+
+			<div class="desc female" id="r28">
+				<h2>#28 <br>All About That Bass</h2>
+				<font size=2>Meghan Trainor</font>
+				<p><img src="resources/r28.png"></p>
+				<p class="tag">(+1) In Control</p>
+				<p class="tag">(+2) Independence</p>
+			</div>
+
+			<div class="desc female" id="r29">
+				<h2>#29 <br>Style</h2>
+				<font size=2>Taylor Swift</font>
+				<p><img src="resources/r29.png"></p>
+				<p class="tag">(+0) Lyrically Neutral</p>
+			</div>
+
+			<div class="desc male" id="r30">
+				<h2>#30 <br>Hotline Bling</h2>
+				<font size=2>Drake</font>
+				<p><img src="resources/r30.png"></p>
+				<p class="tag">(-1) Promiscuity</p>
+			</div>
+																																																																								
+		</div>
+	</div>
+
+	<div id="pad"></div>
+
+	<div id="writeup">
+
+		<div class="wHeading" id="discuss"><p>DISCUSSION</p></div>
+		<div class="wText" id="discuss">
+				
+			<p>Lyrics are obtained from an <a href="#ref">online source</a> that also provides user-contributed and verified artiste-contributed comments on the meanings exuded by the lyrics. Coding is done based on the information provided from the source and also through my own inference of the lyrics. The coding categories are: (-2) Sex Object, (-1) Promiscuity, (+0) Lyrically Neutral, (+0) Lyrically Ambiguous, (+0) Not Gender Specific, (+1) Important Person, (+1) True Love, (+1) Mutual Love, (+1) In Control, (+2) Independence, (+2) Female Dominance and (+3) Seen as Equals. Songs are scored based on the points of the coding categories. A negative score would signify objectification whereas a positive score signifies empowerment.</p>
+
+			<p>It is to be noted that the coding of the lyrics are not an absolute objective view on the nature of women stereotyping it represents. This is due to potential misunderstanding of cultural differences in language and the use of pseudonyms and hidden meanings that may or may not be intended by the artiste. For example, #4 Trap Queen tend to refer to vice-related activities in its lyrics but the image portrayed is one of women empowerment through independence and as equals.</p>
+
+			<p>However, the analysis still shows an interesting pattern particularly towards songs sung only by females. The lyrics of these songs lean towards empowerment rather than the objectification of women. When mixed with male artistes however, the lyrics tend towards objectification. This phenomenon might be a result of the nature of the male artiste's lyrics and would require further in-depth analysis through artiste profiling. Lyrics by male artiste are not clearly defined towards either ends of the research paradigm and tend to remain neutral.</p>
+			
+			<p>Due to time constraints, the small purposive sample may have resulted in an unfair analysis as there is no balanced mixed of gender for this study (19 males, 7 females, 4 mixed gender). Furthermore, a temporal scope of 1 year disables the potential for studying trends in lyric stereotyping especially in recent years where gender equality is a frequently discussed topic. Categorizing the songs by the artiste's gender may not also provide a proper analysis as compared to categorizing them by the songwriter's gender as the artiste may not have a say in the actual song writing process.</p>
+
+			<p>A further study could include a much wider scope as mentioned earlier and could also focus on genres on top of gender. A comparison of popular music lyrics in different languages and/or countries may also prove fruitful in understanding culture tolerance and acceptance of certain values and stereotypes as the narrow scope on the United States of America would not provide a universal understanding of stereotypes in popular music lyrics as compared to those found in countries that are more reserved such as China.</p>
+
+		</div>
+
+		<div id="gap2"></div>
+		<div class="wHeading" id="ref"><p><a name="ref">REFERENCES</a></p></div>
+		<div class="wText" id="ref2">
+
+			<p>1. <a href="http://genius.com/Mark-ronson-uptown-funk-lyrics">'Uptown Funk' by Mark Ronson ft. Bruno Mars</a></p>
+			<p>2. <a href="http://genius.com/Ed-sheeran-thinking-out-loud-lyrics">'Thinking Out Loud' by Ed Sheeran</a></p>
+			<p>3. <a href="http://genius.com/Wiz-khalifa-see-you-again-lyrics">'See You Again' by Wiz Khalifa ft. Charlie Puth</a></p>
+			<p>4. <a href="http://genius.com/Fetty-wap-trap-queen-lyrics">'Trap Queen' by Fetty Wap</a></p>
+			<p>5. <a href="http://genius.com/Maroon-5-sugar-lyrics">'Sugar' by Maroon 5</a></p>
+			<p>6. <a href="http://genius.com/Walk-the-moon-shut-up-and-dance-lyrics">'Shut Up and Dance' by Walk the Moon</a></p>
+			<p>7. <a href="http://genius.com/Taylor-swift-blank-space-lyrics">'Blank Space' by Taylor Swift</a></p>
+			<p>8. <a href="http://genius.com/Silento-watch-me-lyrics">'Watch Me' by Silento</a></p>
+			<p>9. <a href="http://genius.com/The-weeknd-earned-it-lyrics">'Earned It' by The Weeknd</p>
+			<p>10. <a href="http://genius.com/The-weeknd-the-hills-lyrics">'The Hills' by The Weeknd</a></p>
+			<p>11. <a href="http://genius.com/Omi-cheerleader-lyrics">'Cheerleader' by OMI</a></p>
+			<p>12. <a href="http://genius.com/The-weeknd-cant-feel-my-face-lyrics">'Can't Feel My Face' by The Weeknd</a></p>
+			<p>13. <a href="http://genius.com/Ellie-goulding-love-me-like-you-do-lyrics">'Love Me Like You Do' by Ellie Goulding</a></p>
+			<p>14. <a href="http://genius.com/Hozier-take-me-to-church-lyrics">'Take Me to Church' by Hozier</a></p>
+			<p>15. <a href="http://genius.com/Taylor-swift-bad-blood-lyrics">'Bad Blood' by Taylor Swift ft. Kendrick Lamar</a></p>
+			<p>16. <a href="http://genius.com/Major-lazer-lean-on-lyrics">'Lean On' by Major Lazer and DJ Snake ft. MØ</a></p>
+			<p>17. <a href="http://genius.com/Jason-derulo-want-to-want-me-lyrics">'Want to Want Me' by Jason Derulo</a></p>
+			<p>18. <a href="http://genius.com/Taylor-swift-shake-it-off-lyrics">'Shake It Off' by Taylor Swift</a></p>
+			<p>19. <a href="http://genius.com/Jack-u-where-are-u-now-lyrics">'Where Are U Now' by Skrillex and Diplo ft. Justin Bieber</a></p>
+			<p>20. <a href="http://genius.com/Rachel-platten-fight-song-lyrics">'Fight Song' by Rachel Platten</a></p>
+			<p>21. <a href="http://genius.com/Fetty-wap-679-lyrics">'679' by Fetty Wap ft. Remy Boyz</a></p>
+			<p>22. <a href="http://genius.com/Meghan-trainor-lips-are-movin-lyrics">'Lips are Movin' by Meghan Trainor</a></p>
+			<p>23. <a href="http://genius.com/Fifth-harmony-worth-it-lyrics">'Worth It' by Fifth Harmony ft. Kid Ink</a></p>
+			<p>24. <a href="http://genius.com/Omarion-post-to-be-lyrics">'Post to Be' by Omarion ft. Chris Brown and Jhené Aiko</a></p>
+			<p>25. <a href="http://genius.com/Andy-grammer-honey-im-good-lyrics">'Honey, I'm Good' by Andy Grammer</a></p>
+			<p>26. <a href="http://genius.com/Sam-smith-im-not-the-only-one-lyrics">'I'm Not the Only One' by Sam Smith</a></p>
+			<p>27. <a href="http://genius.com/Selena-gomez-good-for-you-lyrics">'Good for You' by Selena Gomez ft. A$AP Rocky</a></p>
+			<p>28. <a href="http://genius.com/Meghan-trainor-all-about-that-bass-lyrics">'All About That Bass' by Meghan Trainor</a></p>
+			<p>29. <a href="http://genius.com/Taylor-swift-style-lyrics">'Style' by Taylor Swift</a></p>
+			<p>30. <a href="http://genius.com/Drake-hotline-bling-lyrics">'Hotline Bling' by Drake</a></p>
+
+		</div>
+	</div>
+
+</body>
+
+</html>
